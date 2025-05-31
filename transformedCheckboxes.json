@@ -1,0 +1,41 @@
+{
+  "b_1:5710": {
+    "component": {
+      "componentType": "Checkbox",
+      "appearance": {
+        "size": "sm"
+      },
+      "content": {
+        "help": "",
+        "addOns": {
+          "label": {
+            "variant": "text-14",
+            "weight": "medium",
+            "color": "Secondary"
+          },
+          "description": {
+            "variant": "text-12",
+            "weight": "regular",
+            "color": "Tertiary"
+          },
+          "help": {
+            "variant": "",
+            "weight": "",
+            "color": ""
+          }
+        },
+        "defaultValue": "true",
+        "description": "Save my login details for next time.",
+        "label": "Remember me"
+      }
+    },
+    "visibility": {
+      "value": true
+    },
+    "dpOn": [],
+    "displayName": "Checkbox",
+    "dataSourceIds": [],
+    "id": "b_1:5710",
+    "parentId": "root_id"
+  }
+}
