@@ -152,35 +152,71 @@ function transformCheckboxNode(node: any, nodeId: string): CheckboxSchema {
 }
 
 function transformFigmaToSchemas(figmaJson: any): Record<string, CheckboxSchema> {
+    // Validate input structure
+    if (!figmaJson?.Result?.nodes) {
+        throw new Error('Invalid Figma JSON structure: Missing Result.nodes');
+    }
+
     const result: Record<string, CheckboxSchema> = {};
-    const nodes = figmaJson.Result.nodes || {};
+    const nodes = figmaJson.Result.nodes;
+    let checkboxCount = 0;
 
     for (const [nodeId, nodeData] of Object.entries(nodes)) {
         const document = (nodeData as any).document;
         
+        // Skip invalid nodes
+        if (!document) continue;
+
         if (document.type === "INSTANCE" && 
             document.componentProperties?.Type?.value === "Checkbox") {
-            
-            // For debugging
-            console.log('Processing Node:', nodeId);
-            console.log('Node Data:', JSON.stringify(document.componentProperties, null, 2));
-            
+            checkboxCount++;
             const checkboxId = `b_${nodeId}`;
             result[checkboxId] = transformCheckboxNode(document, checkboxId);
         }
+    }
+
+    // Warn if no checkboxes found
+    if (checkboxCount === 0) {
+        console.warn('\x1b[33m%s\x1b[0m', '⚠️  Warning: No checkbox components found in the Figma JSON');
+        console.log('\x1b[36m%s\x1b[0m', '🔍 Make sure that:');
+        console.log('   1. Your Figma JSON contains component nodes');
+        console.log('   2. Components have Type.value set to "Checkbox"');
+        console.log('   3. Components are properly exported from Figma');
+    } else {
+        console.info('\x1b[32m%s\x1b[0m', `✅ Successfully processed ${checkboxCount} checkbox component(s)`);
     }
 
     return result;
 }
 
 try {
+    // Validate file exists
+    if (!readFileSync('figmaResponse.json', 'utf-8')) {
+        throw new Error('figmaResponse.json not found');
+    }
+
     const figmaJson = JSON.parse(readFileSync('figmaResponse.json', 'utf-8'));
     const transformedData = transformFigmaToSchemas(figmaJson);
-    writeFileSync(
-        'transformedCheckboxes.json', 
-        JSON.stringify(transformedData, null, 2)
-    );
-    console.log('Transformation complete! Check transformedCheckboxes.json');
+
+    // Only write file if we have data
+    if (Object.keys(transformedData).length > 0) {
+        writeFileSync(
+            'transformedCheckboxes.json', 
+            JSON.stringify(transformedData, null, 2)
+        );
+        console.log('\x1b[32m%s\x1b[0m', '✅ Transformation complete! Check transformedCheckboxes.json');
+    } else {
+        console.warn('\x1b[33m%s\x1b[0m', '❌ No data to write: No checkbox components were found');
+        console.log('\x1b[36m%s\x1b[0m', 'Try the following:');
+        console.log('   1. Check if your Figma file contains checkbox components');
+        console.log('   2. Verify the JSON structure in figmaResponse.json');
+        console.log('   3. Run fetchFigma.ts to get fresh data from Figma');
+    }
 } catch (error) {
-    console.error('Error:', error);
+    if (error instanceof Error) {
+        console.error('Error:', error.message);
+    } else {
+        console.error('Unknown error occurred');
+    }
+    process.exit(1); // Exit with error code
 }

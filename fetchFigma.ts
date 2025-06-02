@@ -5,8 +5,10 @@ const ids = {
   FileId: "vPbNKOqixr8HPOoswonSoO",
   NodeId: "3352-19070"
 };
+//url for avatar group
+//https://www.figma.com/design/4r7C2sI9cktH4T8atJhmrW/Component-Sheet?node-id=1-3124&t=D92VBxVPNLnvJaKL-4
 
-const fileUrl = "https://www.figma.com/design/4r7C2sI9cktH4T8atJhmrW/Component-Sheet?node-id=1-5710&t=8LnmvlwYcvtLFgLZ-4";
+const fileUrl = "https://www.figma.com/design/4r7C2sI9cktH4T8atJhmrW/Component-Sheet?node-id=1-3124&t=D92VBxVPNLnvJaKL-4";
 export async function fetchFromId() {
   const response = await fetch('https://api.qa.unifyapps.com/api-endpoint/figma/node-details', {
     method: 'POST',

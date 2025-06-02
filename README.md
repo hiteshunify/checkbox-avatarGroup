@@ -23,21 +23,33 @@ npm install
 
 ## Usage
 
-1. Build the project:
+1. First, install the dependencies:
 ```bash
-npm run build
+npm install
 ```
 
-2. Run the transformer:
+2. You have several ways to run the project:
+
+a. Build and run (production):
 ```bash
-npm start
+npm run build   # Compiles TypeScript to JavaScript
+npm start       # Runs the compiled code
 ```
 
-This will:
+b. Run directly with ts-node (development):
+```bash
+npm run dev        # Runs index.ts with ts-node
+npm run transform  # Runs transformer.ts directly
+npm run fetch     # Runs fetchFigma.ts to get fresh data
+```
+
+The transformer will:
 - Read the Figma response from `figmaResponse.json`
 - Transform the checkbox components
 - Generate `transformedCheckboxes.json` with the low-code schema
 - Create `IDs.txt` with component IDs
+
+If no checkboxes are found, you'll see helpful warning messages and troubleshooting steps.
 
 ## Scripts
 

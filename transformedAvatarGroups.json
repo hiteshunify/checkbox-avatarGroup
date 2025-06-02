@@ -1,0 +1,108 @@
+{
+  "b_1:3124": {
+    "component": {
+      "componentType": "AvatarGroup",
+      "appearance": {
+        "maxVisibleAvatars": 3,
+        "size": "xs",
+        "styles": {
+          "padding": {
+            "l": "ps-md"
+          },
+          "width": "w-fit"
+        }
+      },
+      "content": {
+        "type": "STATIC",
+        "avatarGroupItems": [
+          {
+            "fallbackText": "Avatar 1",
+            "label": "Avatar 1",
+            "type": "icon",
+            "value": "avatarAvatar1"
+          },
+          {
+            "fallbackText": "Avatar 2",
+            "label": "Avatar 2",
+            "type": "icon",
+            "value": "avatarAvatar2"
+          },
+          {
+            "fallbackText": "Avatar 3",
+            "label": "Avatar 3",
+            "type": "icon",
+            "value": "avatarAvatar3"
+          },
+          {
+            "fallbackText": "Avatar 4",
+            "label": "Avatar 4",
+            "type": "icon",
+            "value": "avatarAvatar4"
+          },
+          {
+            "fallbackText": "Avatar 5",
+            "label": "Avatar 5",
+            "type": "icon",
+            "value": "avatarAvatar5"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 6",
+            "id": "avatarGroup_dqebej",
+            "type": "icon",
+            "value": "avatarGroup_dqebej",
+            "fallbackText": "Avatar 6"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 7",
+            "id": "avatarGroup_3ixxqq",
+            "type": "icon",
+            "value": "avatarGroup_3ixxqq",
+            "fallbackText": "Avatar 7"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 8",
+            "id": "avatarGroup_2cgdj4",
+            "type": "icon",
+            "value": "avatarGroup_2cgdj4",
+            "fallbackText": "Avatar 8"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 9",
+            "id": "avatarGroup_k2i2lu",
+            "type": "icon",
+            "value": "avatarGroup_k2i2lu",
+            "fallbackText": "Avatar 9"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 10",
+            "id": "avatarGroup_8rwsp9",
+            "type": "icon",
+            "value": "avatarGroup_8rwsp9",
+            "fallbackText": "Avatar 10"
+          },
+          {
+            "blockId": "__PLACEHOLDER__",
+            "label": "Avatar 11",
+            "id": "avatarGroup_gt0wc5",
+            "type": "icon",
+            "value": "avatarGroup_gt0wc5",
+            "fallbackText": "Avatar 11"
+          }
+        ]
+      }
+    },
+    "visibility": {
+      "value": true
+    },
+    "dpOn": [],
+    "displayName": "Avatar_group",
+    "dataSourceIds": [],
+    "id": "b_1:3124",
+    "parentId": "root_id"
+  }
+}
