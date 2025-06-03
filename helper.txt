@@ -2,11 +2,26 @@
     "component": {
         "componentType": "AvatarGroup",
         "appearance": {
-            "maxVisibleAvatars": 3,
-            "size": "sm",
+            "maxVisibleAvatars": 6,
+            "size": "xl",
             "styles": {
                 "padding": {
                     "l": "ps-md"
+                },
+                "boxShadow": "shadow-3xl",
+                "borderColor": "border-success",
+                "margin": {
+                    "all": "m-4xl"
+                },
+                "backgroundColor": "bg-brand-darker",
+                "overflow": {
+                    "all": "overflow-visible"
+                },
+                "borderRadius": {
+                    "all": "rounded-5xl"
+                },
+                "borderWidth": {
+                    "all": "border-4"
                 },
                 "width": "w-fit"
             }
@@ -47,30 +62,23 @@
                 {
                     "blockId": "__PLACEHOLDER__",
                     "label": "Avatar 6",
-                    "id": "avatarGroup_k8iiJ",
+                    "id": "avatarGroup_Q4Jd8",
                     "type": "icon",
-                    "value": "avatarGroup_k8iiJ"
+                    "value": "avatarGroup_Q4Jd8"
                 },
                 {
                     "blockId": "__PLACEHOLDER__",
                     "label": "Avatar 7",
-                    "id": "avatarGroup_nEJkh",
+                    "id": "avatarGroup_9O69K",
                     "type": "icon",
-                    "value": "avatarGroup_nEJkh"
+                    "value": "avatarGroup_9O69K"
                 },
                 {
                     "blockId": "__PLACEHOLDER__",
                     "label": "Avatar 8",
-                    "id": "avatarGroup_yMQvJ",
+                    "id": "avatarGroup_9Ak4f",
                     "type": "icon",
-                    "value": "avatarGroup_yMQvJ"
-                },
-                {
-                    "blockId": "__PLACEHOLDER__",
-                    "label": "Avatar 9",
-                    "id": "avatarGroup_X7OGA",
-                    "type": "icon",
-                    "value": "avatarGroup_X7OGA"
+                    "value": "avatarGroup_9Ak4f"
                 }
             ]
         }

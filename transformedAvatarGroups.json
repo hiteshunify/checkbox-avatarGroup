@@ -1,5 +1,5 @@
 {
-  "b_1:3124": {
+  "b_XH7hR": {
     "component": {
       "componentType": "AvatarGroup",
       "appearance": {
@@ -108,7 +108,7 @@
     "dpOn": [],
     "displayName": "Avatar_group",
     "dataSourceIds": [],
-    "id": "b_1:3124",
+    "id": "b_XH7hR",
     "parentId": "root_id"
   }
 }
