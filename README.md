@@ -1,20 +1,15 @@
 # TypeScript Figma to Low-Code Checkbox Transformer
 
-## Installation
+## Collaborators
 
-1. Clone the repository or navigate to the project directory:
-```bash
-cd checkbox_ts
-```
+- [Molik Agarwal](https://github.com/MolikAgarwal28)
+- [Harsh Tayal](https://github.com/harshtayal1904)
 
-2. Install dependencies:
-```bash
-npm install
-```
 
 ## Project Structure
 
-- `transformer.ts` - Main transformation logic
+- `transformerChecbox.ts` - transformation logic for checkboxes
+- `transformerAvatarGroup.ts` - transformation logic for Avatar Group
 - `colors.ts` - Color token mappings and utilities
 - `fetchFigma.ts` - Figma API integration
 - `index.ts` - Entry point
@@ -28,33 +23,21 @@ npm install
 npm install
 ```
 
-2. You have several ways to run the project:
-
-a. Build and run (production):
+2. Run the files
 ```bash
-npm run build   # Compiles TypeScript to JavaScript
-npm start       # Runs the compiled code
-```
-
-b. Run directly with ts-node (development):
-```bash
-npm run dev        # Runs index.ts with ts-node
-npm run transform  # Runs transformer.ts directly
-npm run fetch     # Runs fetchFigma.ts to get fresh data
+npm start    # this will run the fetchFigma.js and will create a file named figmaResponse.json and a file ID.txt
+npx ts-node transformerAvatar.ts # this will run the transformerAvatar.ts and will create transformedAvatarGroups.json
+npx ts-node transformerCheckbox.ts  # this will run the transformerCheckbox.ts and will create transformedCheckbox.json
 ```
 
 The transformer will:
 - Read the Figma response from `figmaResponse.json`
-- Transform the checkbox components
+- Transform the checkbox/avatarGroup components
 - Generate `transformedCheckboxes.json` with the low-code schema
 - Create `IDs.txt` with component IDs
 
-If no checkboxes are found, you'll see helpful warning messages and troubleshooting steps.
+If no checkboxes / avatarGroups are found, you'll see helpful warning messages and troubleshooting steps.
 
-## Scripts
-
-- `npm run build` - Compiles TypeScript files
-- `npm start` - Runs the transformer
 
 
 
