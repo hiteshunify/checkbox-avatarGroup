@@ -17,6 +17,7 @@
 ```bash
 npm init -y
 npm install
+npm install --save-dev @types/node
 ```
 
 2. Run the files
