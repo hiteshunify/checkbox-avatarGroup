@@ -20,6 +20,7 @@
 
 1. First, install the dependencies:
 ```bash
+npm init -y
 npm install
 ```
 
