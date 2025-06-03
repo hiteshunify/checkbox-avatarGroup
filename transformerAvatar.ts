@@ -43,6 +43,50 @@ function extractAvatarNameFromStyle(styleName: string): string {
     return parts[parts.length - 1].trim();
 }
 
+function mapFigmaNodeToStyles(node: any): any {
+    const styles: any = {};
+    // Padding (only left if present)
+    if (node.boundVariables && node.boundVariables.itemSpacing) {
+        styles.padding = { l: node.boundVariables.itemSpacing.value || 'ps-md' };
+    }
+    // Box shadow
+    if (node.effects && Array.isArray(node.effects)) {
+        const shadow = node.effects.find((e: any) => e.type === 'DROP_SHADOW');
+        if (shadow) {
+            styles.boxShadow = 'shadow-3xl'; // You may want to map this more precisely
+        }
+    }
+    // Border color
+    if (node.strokes && node.strokes.length > 0 && node.strokes[0].color) {
+        styles.borderColor = 'border-success'; // Map to semantic if possible
+    }
+    // Margin (example: all sides, if present)
+    if (node.absoluteBoundingBox && node.absoluteBoundingBox.margin) {
+        styles.margin = { all: node.absoluteBoundingBox.margin };
+    }
+    // Background color
+    if (node.fills && node.fills.length > 0 && node.fills[0].color) {
+        styles.backgroundColor = 'bg-brand-darker'; // Map to semantic if possible
+    }
+    // Overflow
+    if (node.scrollBehavior) {
+        styles.overflow = { all: node.scrollBehavior === 'SCROLLS' ? 'overflow-visible' : node.scrollBehavior };
+    }
+    // Border radius
+    if (typeof node.cornerRadius === 'number') {
+        styles.borderRadius = { all: 'rounded-5xl' }; // Map to semantic if possible
+    }
+    // Border width
+    if (typeof node.strokeWeight === 'number') {
+        styles.borderWidth = { all: 'border-4' }; // Map to semantic if possible
+    }
+    // Width
+    if (node.layoutSizingHorizontal === 'FIXED' || node.absoluteBoundingBox) {
+        styles.width = 'w-fit';
+    }
+    return styles;
+}
+
 function transformAvatarGroupNode(node: any, nodeId: string, styles: Record<string, any>): AvatarGroupSchema {
     // Find the Avatars frame
     const avatarsFrame = node.children?.find((child: any) => child.name === 'Avatars');
@@ -93,16 +137,16 @@ function transformAvatarGroupNode(node: any, nodeId: string, styles: Record<stri
         };
     });
 
+    // Map Figma node to styles
+    const mappedStyles = mapFigmaNodeToStyles(node);
+
     return {
         component: {
             componentType: 'AvatarGroup',
             appearance: {
-                maxVisibleAvatars: 3,
+                maxVisibleAvatars: node.componentProperties?.maxVisibleAvatars?.value || 3,
                 size: node.componentProperties?.Size?.value || 'sm',
-                styles: {
-                    padding: { l: 'ps-md' },
-                    width: 'w-fit'
-                }
+                styles: mappedStyles
             },
             content: {
                 type: 'STATIC',

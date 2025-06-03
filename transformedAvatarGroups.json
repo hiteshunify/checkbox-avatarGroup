@@ -9,6 +9,12 @@
           "padding": {
             "l": "ps-md"
           },
+          "overflow": {
+            "all": "overflow-visible"
+          },
+          "borderWidth": {
+            "all": "border-4"
+          },
           "width": "w-fit"
         }
       },
@@ -48,49 +54,49 @@
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 6",
-            "id": "avatarGroup_dqebej",
+            "id": "avatarGroup_e61s5o",
             "type": "icon",
-            "value": "avatarGroup_dqebej",
+            "value": "avatarGroup_e61s5o",
             "fallbackText": "Avatar 6"
           },
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 7",
-            "id": "avatarGroup_3ixxqq",
+            "id": "avatarGroup_xjg7e5",
             "type": "icon",
-            "value": "avatarGroup_3ixxqq",
+            "value": "avatarGroup_xjg7e5",
             "fallbackText": "Avatar 7"
           },
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 8",
-            "id": "avatarGroup_2cgdj4",
+            "id": "avatarGroup_6thzss",
             "type": "icon",
-            "value": "avatarGroup_2cgdj4",
+            "value": "avatarGroup_6thzss",
             "fallbackText": "Avatar 8"
           },
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 9",
-            "id": "avatarGroup_k2i2lu",
+            "id": "avatarGroup_a3td4a",
             "type": "icon",
-            "value": "avatarGroup_k2i2lu",
+            "value": "avatarGroup_a3td4a",
             "fallbackText": "Avatar 9"
           },
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 10",
-            "id": "avatarGroup_8rwsp9",
+            "id": "avatarGroup_iokz4f",
             "type": "icon",
-            "value": "avatarGroup_8rwsp9",
+            "value": "avatarGroup_iokz4f",
             "fallbackText": "Avatar 10"
           },
           {
             "blockId": "__PLACEHOLDER__",
             "label": "Avatar 11",
-            "id": "avatarGroup_gt0wc5",
+            "id": "avatarGroup_cgi9x1",
             "type": "icon",
-            "value": "avatarGroup_gt0wc5",
+            "value": "avatarGroup_cgi9x1",
             "fallbackText": "Avatar 11"
           }
         ]
