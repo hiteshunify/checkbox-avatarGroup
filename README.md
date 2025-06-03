@@ -1,10 +1,5 @@
 # TypeScript Figma to Low-Code Checkbox Transformer
 
-## Collaborators
-
-- [Molik Agarwal](https://github.com/MolikAgarwal28)
-- [Harsh Tayal](https://github.com/harshtayal1904)
-
 
 ## Project Structure
 
