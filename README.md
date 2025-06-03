@@ -1,4 +1,4 @@
-# TypeScript Figma to Low-Code Checkbox Transformer
+# TypeScript Figma to Low-Code Transformer
 
 
 ## Project Structure
